@@ -96,10 +96,10 @@ python -m unittest discover -s tests
 ```
 
 ### Tests Overview
-- test_actress.py: Tests the actress-based film search and recommendation functions.
-- test_genre.py: Ensures genre-based recommendations work as expected.
-- test_year.py: Validates the year-based recommendation logic.
-- test_random.py: Checks that random film recommendations are properly generated.
+- `test_actress.py`: Tests the actress-based film search and recommendation functions.
+- `test_genre.py`: Ensures genre-based recommendations work as expected.
+- `test_year.py`: Validates the year-based recommendation logic.
+- `test_random.py`: Checks that random film recommendations are properly generated.
 
 ### Test Structure and Best Practices
 Each test file uses the unittest framework and unittest.mock for mocking API responses and user input to ensure isolation from external dependencies. Tests validate core functionalities, such as:
@@ -129,7 +129,7 @@ Contributions to this project are welcome but must be approved by the owner. To 
 2. Make your changes.
 3. Submit a pull request for review.
 
-Note: By submitting a contribution, you agree to transfer ownership of the contribution to the project owner, [Your Name]. This helps maintain a cohesive project and ensures all code aligns with the project’s goals.
+Note: By submitting a contribution, you agree to transfer ownership of the contribution to the project owner, ELanderea. This helps maintain a cohesive project and ensures all code aligns with the project’s goals.
 
 ## License
 This project is proprietary. All rights reserved. Any use, distribution, or modification of the code is not permitted without explicit permission from the owner. For more details or inquiries, please contact ELanderea directly.
