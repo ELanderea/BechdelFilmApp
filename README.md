@@ -13,17 +13,24 @@ The Bechdel Film App is a comprehensive tool designed to interact with The Movie
 
 ## Project Structure
 ```tree
-├── app.py           # Main application entry point
-├── bechdel.py       # Handles interaction with the Bechdel Test API and film selection
-├── config.py        # Configuration file containing API keys and URLs
-├── tmdb_client.py   # Handles communication with the TMDB API
-├── actress.py       # Functions for searching and recommending movies by actresses
-├── genre.py         # Classes and functions for genre-based movie recommendations
-├── year.py          # Classes for year-based movie recommendations
-├── gender.py        # Function to get gender details of the crew
-├── display_movie.py # Class for displaying detailed movie information
-├── random_rec.py    # Class and function for fetching random movie recommendations
-└── tests.py         # Unit tests for various functions
+.
+├── app.py                # Main application logic and user interaction
+├── bechdel.py            # Handles Bechdel Test checks and film identification
+├── config.py             # Configuration for API keys and URLs
+├── tmdb_client.py        # Handles interactions with the TMDB API
+├── actress.py            # Functions for actress-based movie recommendations
+├── genre.py              # Functions for genre-based recommendations
+├── year.py               # Year-based movie recommendation logic
+├── gender.py             # Functions to get gender details of the film crew
+├── display_movie.py      # Displaying detailed movie information
+├── random_rec.py         # Fetches random film recommendations
+├── tests/
+│   ├── test_actress.py   # Tests for actress-based functions
+│   ├── test_genre.py     # Tests for genre-based functions
+│   ├── test_year.py      # Tests for year-based functions
+│   ├── test_random.py    # Tests for random film recommendations
+│   └── __init__.py       # Marks the tests directory as a Python package
+└── README.md             # Project documentation (this file)
 ```
 
 ## Setup and Installation
@@ -70,20 +77,41 @@ Upon running the app, you will be presented with a menu:
 
 ### Example Workflow
 - Select Option 1 to check the Bechdel Test score:
-  - Enter the film's title.
-  - Choose from the list of matching films.
+  - Enter the film's full title or a keyword. 
+  - Confirm your choice from the resulting list of matching films.
   - View the score and decide if you want to see crew gender details.
-- Select Option 4 to get genre-based recommendations:
-  - Choose a genre by number from the displayed list.
-  - View up to 5 recommended movies that pass the Bechdel Test.
+- Select Options 2-6 to get recommendations of films that completely pass the Bechdel Test.
+  (You can search by year or decade, genre, actress, or ask for a random recommendation.
+- Select Option 7 to exit the application. 
 
-### Testing
-To run unit tests:
+## Testing Suite
+This project includes a comprehensive testing suite to ensure the reliability of its core features. The tests are located in the tests/ directory and cover various aspects of the app's functionality.
+
+### Running Tests
+To run the test suite, use the following command:
 
 ```bash
 Copy code
-python tests.py
+python -m unittest discover -s tests
 ```
+
+### Tests Overview
+- test_actress.py: Tests the actress-based film search and recommendation functions.
+- test_genre.py: Ensures genre-based recommendations work as expected.
+- test_year.py: Validates the year-based recommendation logic.
+- test_random.py: Checks that random film recommendations are properly generated.
+
+### Test Structure and Best Practices
+Each test file uses the unittest framework and unittest.mock for mocking API responses and user input to ensure isolation from external dependencies. Tests validate core functionalities, such as:
+- Correct film identification and data parsing.
+- Handling of missing or partial data.
+- User input scenarios and expected outcomes.
+
+### Future Enhancements
+- **Graphical User Interface (GUI)**: Develop a more user-friendly interface.
+- **TV Series Support**: Extend functionality to include TV series.
+- **Additional Filters**: Add filters for runtime, director, and more.
+
 
 ## Project Highlights
 - Caching and Performance: Uses functools.lru_cache to cache frequently requested data, improving performance.
