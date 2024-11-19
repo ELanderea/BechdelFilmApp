@@ -116,7 +116,9 @@ class Film:
                         confirmed_film['rating'], confirmed_film['dubious'],
                         confirmed_film['imdbid'])
 
+            film.display_score()
             return film
+
 
     @staticmethod
     def display(film):
